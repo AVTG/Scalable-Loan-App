@@ -7,7 +7,7 @@ import { Loan, LoanSchema } from '../types/loan.js';
 dotenv.config();
 
 const MIN_MONTHLY = Number(process.env.MIN_MONTHLY_RS) || 1_000;
-const BATCH = Number(process.env.BATCH_SIZE) || 50;
+const BATCH = Number(process.env.BATCH_SIZE) || 100;
 const stream = 'loans';
 const group = 'g';
 const cid = `worker-${process.env.HOSTNAME ?? process.pid}`;
