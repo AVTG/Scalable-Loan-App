@@ -1,0 +1,35 @@
+{
+  "name": "loanapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:api": "tsx watch src/api/index.ts",
+    "dev:worker": "tsx watch src/worker/worker.ts",
+    "build": "tsc",
+    "start:api": "node dist/api/index.js",
+    "dev:worker1": "tsx watch src/worker/worker.ts",
+    "dev:worker2": "tsx watch src/worker/worker2.ts",
+    "start:worker": "node dist/worker/worker.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "axios": "^1.10.0",
+    "dotenv": "^17.0.0",
+    "fastify": "^5.4.0",
+    "fastify-websocket": "^4.2.2",
+    "ioredis": "^5.6.1",
+    "mongodb": "^6.17.0",
+    "tsx": "^4.20.3",
+    "ws": "^8.18.3",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.8",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
