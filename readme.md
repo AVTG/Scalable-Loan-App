@@ -26,13 +26,14 @@ Backend: http://ec2-13-235-243-187.ap-south-1.compute.amazonaws.com:3000/
                                                                    │  • Group1   worker1      │
                                                                    │  • Group2   worker2      │
                                                                    └─────────┬────────────────┘
-                                                                             │ XPENDING
-                                                Consumer Group "workers"     │ XREADGROUP
-                                                                             ▼
+                                                                             │ XPENDING    ▲
+                                  Consumer Group "workers1" &  "workers1"    │ XREADGROUP  │
+                                                                             ▼             │
                                                                    ┌───────────────────────────┐
                                                                    │  Worker Pods (1‑N)        │
                                                                    │  - Validate & enrich      │
-                                                                   │  - Write ↘                │
+                                                                   │  - Pending requests       │
+                                                                   │  - Write                  │
                                                                    └─────────────┬─────────────┘
                                                                                  │         
                                                                                  ▼         
