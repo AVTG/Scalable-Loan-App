@@ -2,8 +2,8 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const data = JSON.parse(fs.readFileSync('./loan_data_500.json', 'utf8'));
-const ENDPOINT = 'http://localhost:3000/loan';
+const data = JSON.parse(fs.readFileSync('./loan_data_1000.json', 'utf8'));
+const ENDPOINT = 'http://13.235.243.187:3000/loan';
 
 async function sendAll() {
   const promises = data.map(loan =>

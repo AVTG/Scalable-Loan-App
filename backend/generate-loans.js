@@ -3,9 +3,9 @@ const fs = require('fs');
 const NUM_LOANS = 500;
 const loans = [];
 
-for (let i = 0; i < NUM_LOANS; i++) {
-  const id = 100001 + i;
-  const amount = 1000 ; 
+for (let i = 0; i < 2*NUM_LOANS; i=i+2) {
+  const id = 1001 + i;
+  const amount = 10000 ; 
   const term = 1;         
   
 
@@ -14,19 +14,12 @@ for (let i = 0; i < NUM_LOANS; i++) {
     amount,
     term
   });
-}
-for (let i = 500; i < 1000; i++) {
-  const id = 100001 + i;
-  const amount = 10000 ; 
-  const term = 12;         
-  
-
   loans.push({
-    loanId: `L${id}`,
+    loanId: `L${id+1}`,
     amount,
-    term
+    term:term+11
   });
 }
 
 fs.writeFileSync('loan_data_1000.json', JSON.stringify(loans, null, 2));
-console.log('✅ Generated loan_data_500.json');
+console.log('Generated loan_data_1000.json');
